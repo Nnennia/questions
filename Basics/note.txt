@@ -1,0 +1,6 @@
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const keys = Object.keys(fruits);
+Object.keys() returns an Array Iterator object with the keys of an object:
+
+0,1,2,3 -- output
+shift() removes the first item of an array
