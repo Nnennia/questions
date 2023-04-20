@@ -7,16 +7,9 @@ function guessNumber() {
   score = 0;
   while (guess) {
     let userGuess = parseInt(prompt("Guess a number between 1 and 10"));
-    if (attempts === 0 || userGuess === randomNumber) {
+    if (userGuess === randomNumber) {
       score += 1;
       alert("You got it right!");
-      let playAgain = prompt("Would you like to play again? y or n?");
-      if (playAgain === "y") {
-        guessNumber();
-      } else if (playAgain === "n") {
-        alert(`Thanks for playing!Your score is ${score}`);
-      }
-      break;
     } else if (userGuess > randomNumber) {
       attempts -= 1;
       alert(`Too high! You have ${attempts} attempts left`);
@@ -32,16 +25,14 @@ function guessNumber() {
         alert(`You ran out of guesses! The number was ${randomNumber}`);
       }
     }
-    if (attempts === 0 || userGuess === randomNumber) {
-      alert("You got it right!");
-      score += 1;
+    while (attempts === 0 || userGuess === randomNumber) {
       let playAgain = prompt("Would you like to play again? y or n?");
       if (playAgain === "y") {
         guessNumber();
       } else if (playAgain === "n") {
         alert(`Thanks for playing!Your score is ${score}`);
+        break;
       }
-      break;
     }
   }
 }

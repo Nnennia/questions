@@ -16,6 +16,7 @@ const obj = [
     obj2: "stella",
   },
 ];
+console.log(obj);
 console.log(obj[0]); // first item in the obj {obj1 : 'edwin'} (whole object)
 let keys = Object.keys(obj[0]); // ['obj1'] (key)
 console.log(keys);
