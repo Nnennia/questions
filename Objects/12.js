@@ -19,7 +19,7 @@ console.log(
   parseURL("https://github.com/pubnub/python/search?utf8=%E2%9C%93&q=python")
 );
 function parse_URL(url) {
-  var a = document.createElement("a");
+  let a = document.createElement("a");
   a.href = url;
   return {
     source: url,
@@ -28,7 +28,7 @@ function parse_URL(url) {
     port: a.port,
     query: a.search,
     params: (function () {
-      var ret = {},
+      let ret = {},
         seg = a.search.replace(/^\?/, "").split("&"),
         len = seg.length,
         i = 0,
