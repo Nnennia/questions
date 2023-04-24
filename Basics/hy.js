@@ -22,3 +22,15 @@ let keys = Object.keys(obj[0]); // ['obj1'] (key)
 console.log(keys);
 let values = Object.values(obj[0]); // ['edwin']  (value)
 console.log(values);
+
+function getObjectKey(obj1, value) {
+  return Object.keys(obj1).find((key) => obj1[key] === value);
+}
+
+const obj1 = {
+  employee1: "Alice",
+  employee2: "Bobby",
+  employee3: "Carl",
+};
+
+console.log(getObjectKey(obj1, "Alice")); // 👉️ "employee1"
