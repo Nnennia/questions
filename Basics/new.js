@@ -1,11 +1,12 @@
-//Guessing number game in javascript
+//Guess number game
+
 function guessNumber() {
-  let guess = true;
+  let isPlaying = true;
   alert(`You have 10 attempts to guess the number`);
-  let randomNumber = Math.floor(Math.random() * 10) + 1;
+  const randomNumber = Math.floor(Math.random() * 10) + 1;
   attempts = 10;
   score = 0;
-  while (guess) {
+  while (isPlaying) {
     let userGuess = parseInt(prompt("Guess a number between 1 and 10"));
     if (userGuess === randomNumber) {
       score += 1;
@@ -14,18 +15,18 @@ function guessNumber() {
       attempts -= 1;
       alert(`Too high! You have ${attempts} attempts left`);
       if (attempts === 0) {
-        guess = false;
+        isPlaying = false;
         alert(`You ran out of guesses! The number was ${randomNumber}`);
       }
     } else if (userGuess < randomNumber) {
       attempts -= 1;
       alert(`Too low! You have ${attempts} attempts left.`);
       if (attempts === 0) {
-        guess = false;
+        isPlaying = false;
         alert(`You ran out of guesses! The number was ${randomNumber}`);
       }
     }
-    while (attempts === 0 || userGuess === randomNumber) {
+    if (attempts === 0 || userGuess === randomNumber) {
       let playAgain = prompt("Would you like to play again? y or n?");
       if (playAgain === "y") {
         guessNumber();
@@ -36,4 +37,4 @@ function guessNumber() {
     }
   }
 }
-guessNumber();
+// guessNumber();
